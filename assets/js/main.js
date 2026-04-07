@@ -14,6 +14,7 @@ const creationCards = document.querySelectorAll(".creation-card");
 const resultsCount = document.getElementById("results-count");
 const faqItems = document.querySelectorAll(".faq-item");
 const revealItems = document.querySelectorAll(".reveal");
+const demoForms = document.querySelectorAll("[data-demo-form]");
 
 let toastTimer;
 
@@ -44,6 +45,10 @@ function closeMobileNav() {
 }
 
 function applyFilters() {
+  if (!searchInput || !categorySelect || !resultsCount || creationCards.length === 0) {
+    return;
+  }
+
   const query = normalizeValue(searchInput.value.trim());
   const selectedCategory = categorySelect.value;
   let visibleCards = 0;
@@ -66,6 +71,10 @@ function applyFilters() {
 }
 
 function setActiveChip(category) {
+  if (chipButtons.length === 0) {
+    return;
+  }
+
   chipButtons.forEach((button) => {
     button.classList.toggle("is-active", button.dataset.category === category);
   });
@@ -86,6 +95,13 @@ navLinks.forEach((link) => {
 toastTriggers.forEach((trigger) => {
   trigger.addEventListener("click", () => {
     showToast(trigger.dataset.toast);
+  });
+});
+
+demoForms.forEach((form) => {
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    showToast(form.dataset.toast || "Action simulee");
   });
 });
 
@@ -164,5 +180,8 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-setActiveChip("all");
+if (categorySelect) {
+  setActiveChip(categorySelect.value || "all");
+}
+
 applyFilters();

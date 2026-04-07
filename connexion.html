@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Connexion a Artify pour les visiteurs, artisans et administrateurs de la plateforme."
+  >
+  <title>Artify | Connexion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow-left" aria-hidden="true"></div>
+  <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Retour a l'accueil Artify">
+      <span class="brand-mark">A</span>
+      <span class="brand-text">Artify</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Ouvrir le menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#creations">Creations</a>
+      <a href="artisans.html">Artisans</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="button button-ghost is-current" href="connexion.html">Connexion</a>
+      <button class="button button-primary" type="button" data-toast="Page inscription a venir">
+        Inscription
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section page-intro">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Connexion</p>
+        <h1>Acceder a son espace personnel sur Artify</h1>
+        <p class="hero-lead">
+          Cette page prepare le parcours de connexion prevu dans le cahier des charges. Elle peut
+          servir aussi bien aux visiteurs qu'aux artisans ou a l'administration, avec une interface
+          simple et propre a presenter en demo.
+        </p>
+      </div>
+
+      <div class="auth-shell">
+        <aside class="auth-side reveal">
+          <p class="eyebrow">Pourquoi se connecter</p>
+          <h2>Retrouver ses favoris, son profil et ses echanges.</h2>
+          <p>
+            Dans la version finale, la connexion donnera acces a la gestion du profil, au suivi des
+            demandes et aux fonctions propres a chaque type d'utilisateur.
+          </p>
+
+          <ul>
+            <li>Visiteur : retrouver ses creations preferees et contacter plus facilement un artisan.</li>
+            <li>Artisan : gerer son espace, ses creations et la presentation de son atelier.</li>
+            <li>Administrateur : acceder au backoffice pour moderer les contenus et les comptes.</li>
+          </ul>
+        </aside>
+
+        <section class="auth-card reveal">
+          <p class="eyebrow">Formulaire</p>
+          <h2>Connexion a l'espace Artify</h2>
+          <p>
+            Le formulaire ci-dessous est pret pour une future integration back-end. Pour l'instant,
+            il simule une connexion proprement cote front.
+          </p>
+
+          <form data-demo-form data-toast="Connexion simulee. Le back-end sera branche dans la suite du projet.">
+            <div class="field-grid">
+              <label class="field field-full">
+                <span>Adresse email</span>
+                <input type="email" name="email" placeholder="prenom.nom@artify.fr" required>
+              </label>
+
+              <label class="field field-full">
+                <span>Mot de passe</span>
+                <input type="password" name="password" placeholder="Votre mot de passe" required>
+              </label>
+            </div>
+
+            <div class="field">
+              <span>Je me connecte en tant que</span>
+              <div class="role-switch" aria-label="Type de compte">
+                <span class="role-pill is-selected">Visiteur</span>
+                <span class="role-pill">Artisan</span>
+                <span class="role-pill">Administrateur</span>
+              </div>
+            </div>
+
+            <div class="auth-actions">
+              <button class="button button-primary" type="submit">Se connecter</button>
+              <a class="button button-ghost" href="index.html">Retour a l'accueil</a>
+            </div>
+          </form>
+
+          <p class="auth-foot">
+            Mot de passe oublie ou pas encore de compte ?
+            <button class="inline-link" type="button" data-toast="Pages mot de passe oublie et inscription a venir.">
+              Continuer prochainement
+            </button>
+          </p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split-highlight">
+        <article class="highlight-card reveal">
+          <p class="eyebrow">Parcours utilisateur</p>
+          <h2>Une connexion pensee comme une etape rassurante</h2>
+          <p>
+            L'objectif n'est pas seulement d'avoir un formulaire, mais une page qui explique
+            clairement a quoi sert l'authentification dans Artify et ce que l'utilisateur va y gagner.
+          </p>
+        </article>
+
+        <article class="feature-panel reveal">
+          <p class="eyebrow">Ce qui est deja pret</p>
+          <div class="feature-list">
+            <div class="feature-item">
+              <strong>Interface responsive</strong>
+              <span>La page reste lisible sur mobile, tablette et desktop.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Structure prete pour le back-end</strong>
+              <span>Les champs principaux sont deja poses pour une future logique serveur.</span>
+            </div>
+            <div class="feature-item">
+              <strong>Coherence graphique</strong>
+              <span>La charte visuelle reste harmonisee avec la home et la future page artisans.</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">Artify</span>
+      </a>
+      <p class="footer-note">
+        Prototype front de la page de connexion du projet APP Informatique.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="index.html#creations">Creations</a>
+      <a href="artisans.html">Artisans</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
