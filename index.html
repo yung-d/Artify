@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Artify met en valeur des creations artisanales uniques et facilite la rencontre entre visiteurs et createurs."
+  >
+  <title>Artify | Plateforme des createurs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="page-glow page-glow-left" aria-hidden="true"></div>
+  <div class="page-glow page-glow-right" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Retour a l'accueil Artify">
+      <span class="brand-mark">A</span>
+      <span class="brand-text">Artify</span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Ouvrir le menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+      <a href="#top">Accueil</a>
+      <a href="#creations">Creations</a>
+      <a href="#artisans">Artisans</a>
+      <a href="#events">Evenements</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="button button-ghost" type="button" data-toast="Page connexion a venir">
+        Connexion
+      </button>
+      <button class="button button-primary" type="button" data-toast="Page inscription a venir">
+        Inscription
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="top" class="hero section">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Plateforme des createurs</p>
+        <h1>L'artisanat d'auteur trouve enfin sa vitrine.</h1>
+        <p class="hero-lead">
+          Artify relie visiteurs, artisans et createurs independants autour de pieces uniques.
+          La page d'accueil donne une vision claire de la plateforme, des creations mises en avant
+          et des profils qui la font vivre.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#creations">Explorer les creations</a>
+          <button class="button button-secondary" type="button" data-toast="Espace artisan a venir">
+            Devenir artisan
+          </button>
+        </div>
+
+        <ul class="hero-stats" aria-label="Chiffres clefs">
+          <li>
+            <strong>48</strong>
+            <span>createurs mis en avant</span>
+          </li>
+          <li>
+            <strong>120+</strong>
+            <span>pieces repertoriees</span>
+          </li>
+          <li>
+            <strong>3</strong>
+            <span>parcours utilisateurs cibles</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="hero-visual reveal">
+        <article class="mood-card mood-card-tall">
+          <p class="mood-label">Selection editoriale</p>
+          <h2>Pieces faconnees a la main, avec un vrai parti pris.</h2>
+          <p>
+            Bijouterie, ceramique, textile, bois et illustration cohabitent dans une mise en avant
+            chaleureuse et premium.
+          </p>
+        </article>
+
+        <article class="mood-card mood-card-accent">
+          <p class="mood-label">Atelier du mois</p>
+          <h3>Terres Brutes</h3>
+          <p>Gres emaille, formes organiques et palette minerale.</p>
+        </article>
+
+        <article class="mood-card mood-card-outline">
+          <p class="mood-label">Mise en relation</p>
+          <h3>Recherche simple</h3>
+          <p>Retrouver une creation, un artisan ou une categorie en quelques secondes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <div class="search-shell reveal">
+        <div class="section-heading compact">
+          <p class="eyebrow">Recherche simple</p>
+          <h2>Un premier moteur front pour decouvrir les creations</h2>
+          <p>
+            La recherche de la page d'accueil filtre les cartes mises en avant par mot-clef et categorie,
+            en lien avec les fonctionnalites prioritaires du cahier des charges.
+          </p>
+        </div>
+
+        <form id="search-form" class="search-form">
+          <label class="field">
+            <span>Recherche</span>
+            <input
+              id="search-input"
+              type="search"
+              name="search"
+              placeholder="Ex. ceramique, collier, Lyon..."
+            >
+          </label>
+
+          <label class="field">
+            <span>Categorie</span>
+            <select id="category-select" name="category">
+              <option value="all">Toutes</option>
+              <option value="bijouterie">Bijouterie</option>
+              <option value="ceramique">Ceramique</option>
+              <option value="textile">Textile</option>
+              <option value="bois">Bois</option>
+              <option value="illustration">Illustration</option>
+            </select>
+          </label>
+
+          <div class="search-actions">
+            <button class="button button-primary" type="submit">Rechercher</button>
+            <button id="reset-filters" class="button button-ghost" type="button">Reinitialiser</button>
+          </div>
+        </form>
+
+        <div class="chip-list" aria-label="Filtres rapides">
+          <button class="chip is-active" type="button" data-category="all">Tout</button>
+          <button class="chip" type="button" data-category="bijouterie">Bijouterie</button>
+          <button class="chip" type="button" data-category="ceramique">Ceramique</button>
+          <button class="chip" type="button" data-category="textile">Textile</button>
+          <button class="chip" type="button" data-category="bois">Bois</button>
+          <button class="chip" type="button" data-category="illustration">Illustration</button>
+        </div>
+
+        <p class="results-line">
+          <span id="results-count">6</span> creations mises en avant correspondent au filtre.
+        </p>
+      </div>
+    </section>
+
+    <section id="creations" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Creations a la une</p>
+        <h2>Une homepage qui valorise les pieces avant la technologie</h2>
+        <p>
+          La selection ci-dessous reprend la logique de la maquette initiale: une vitrine editoriale,
+          des categories variees et des fiches courtes pour donner envie d'explorer davantage.
+        </p>
+      </div>
+
+      <div id="creation-grid" class="creation-grid">
+        <article
+          class="creation-card reveal"
+          data-category="bijouterie"
+          data-search="collier dore bijouterie paris metal email"
+        >
+          <div class="card-visual tone-amber"></div>
+          <div class="card-body">
+            <p class="card-kicker">Bijouterie - Paris</p>
+            <h3>Collier Eclat d'argile</h3>
+            <p>
+              Pendentif emaille et chaine doree, concu comme une piece de galerie portable.
+            </p>
+            <div class="card-meta">
+              <span>Sophie Martin</span>
+              <strong>128 EUR</strong>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="creation-card reveal"
+          data-category="ceramique"
+          data-search="bol gres ceramique lyon email cuisine"
+        >
+          <div class="card-visual tone-forest"></div>
+          <div class="card-body">
+            <p class="card-kicker">Ceramique - Lyon</p>
+            <h3>Bol Terre Noisette</h3>
+            <p>
+              Gres tourne puis emaille a la main, pense pour les usages du quotidien et les belles tables.
+            </p>
+            <div class="card-meta">
+              <span>Lucas Renard</span>
+              <strong>64 EUR</strong>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="creation-card reveal"
+          data-category="textile"
+          data-search="echarpe tissage textile bordeaux laine atelier"
+        >
+          <div class="card-visual tone-sand"></div>
+          <div class="card-body">
+            <p class="card-kicker">Textile - Bordeaux</p>
+            <h3>Echarpe Horizon</h3>
+            <p>
+              Laine tissee sur metier traditionnel avec une palette chaude inspiree des couchers de soleil.
+            </p>
+            <div class="card-meta">
+              <span>Amelie Tessier</span>
+              <strong>89 EUR</strong>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="creation-card reveal"
+          data-category="bois"
+          data-search="tabouret chene bois nantes mobilier ebene"
+        >
+          <div class="card-visual tone-walnut"></div>
+          <div class="card-body">
+            <p class="card-kicker">Bois - Nantes</p>
+            <h3>Tabouret Ligne Claire</h3>
+            <p>
+              Assise en chene massif et finitions satinees, entre mobilier utile et objet de caractere.
+            </p>
+            <div class="card-meta">
+              <span>Marc Delaunay</span>
+              <strong>340 EUR</strong>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="creation-card reveal"
+          data-category="illustration"
+          data-search="illustration affiche encre lille papier artisan"
+        >
+          <div class="card-visual tone-ink"></div>
+          <div class="card-body">
+            <p class="card-kicker">Illustration - Lille</p>
+            <h3>Affiche Botanique 02</h3>
+            <p>
+              Tirage numerote sur papier texture, compose a l'encre et retravaille numeriquement.
+            </p>
+            <div class="card-meta">
+              <span>Lea Cournot</span>
+              <strong>42 EUR</strong>
+            </div>
+          </div>
+        </article>
+
+        <article
+          class="creation-card reveal"
+          data-category="ceramique"
+          data-search="vase ceramique montpellier atelier decor interieur"
+        >
+          <div class="card-visual tone-clay"></div>
+          <div class="card-body">
+            <p class="card-kicker">Ceramique - Montpellier</p>
+            <h3>Vase Brume Claire</h3>
+            <p>
+              Forme haute et texture mate, ideal pour une scenographie sobre et contemporaine.
+            </p>
+            <div class="card-meta">
+              <span>Jeanne Valette</span>
+              <strong>96 EUR</strong>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="artisans" class="section section-alt">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Profils createurs</p>
+        <h2>La plateforme met aussi les artisans au premier plan</h2>
+        <p>
+          Le cahier des charges insiste sur la decouverte des profils. Chaque carte presente un savoir-faire,
+          une ville et une specialite pour guider rapidement les visiteurs.
+        </p>
+      </div>
+
+      <div class="artisan-grid">
+        <article class="artisan-card reveal">
+          <div class="artisan-badge">SM</div>
+          <div>
+            <p class="card-kicker">Bijouterie</p>
+            <h3>Sophie Martin</h3>
+            <p>
+              Pieces emaillees, finitions dorees et approche editoriale du bijou contemporain.
+            </p>
+            <span class="artisan-tag">Paris - Repond sous 24 h</span>
+          </div>
+        </article>
+
+        <article class="artisan-card reveal">
+          <div class="artisan-badge badge-green">LR</div>
+          <div>
+            <p class="card-kicker">Ceramique</p>
+            <h3>Lucas Renard</h3>
+            <p>
+              Atelier tourne vers l'usage quotidien, les terres brutes et les emaux sobres.
+            </p>
+            <span class="artisan-tag">Lyon - Atelier ouvert le samedi</span>
+          </div>
+        </article>
+
+        <article class="artisan-card reveal">
+          <div class="artisan-badge badge-gold">AT</div>
+          <div>
+            <p class="card-kicker">Textile</p>
+            <h3>Amelie Tessier</h3>
+            <p>
+              Tissage manuel, fibres naturelles et petites series realisees a Bordeaux.
+            </p>
+            <span class="artisan-tag">Bordeaux - Commandes sur mesure</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Parcours utilisateur</p>
+        <h2>Une homepage concue comme point d'entree clair</h2>
+        <p>
+          Cette structure suit les objectifs du projet: faire comprendre rapidement le service, montrer les
+          creations et faciliter la prise de contact sans alourdir l'experience.
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <article class="step-card reveal">
+          <span class="step-index">01</span>
+          <h3>Decouvrir</h3>
+          <p>Le visiteur parcourt les mises en avant et utilise la recherche simple pour cibler un besoin.</p>
+        </article>
+
+        <article class="step-card reveal">
+          <span class="step-index">02</span>
+          <h3>Comparer</h3>
+          <p>Les fiches courtes et les profils artisans aident a identifier le bon style ou le bon atelier.</p>
+        </article>
+
+        <article class="step-card reveal">
+          <span class="step-index">03</span>
+          <h3>Contacter</h3>
+          <p>La prise de contact devient naturelle, en attendant les autres pages du projet complet.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="events" class="section section-alt">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Evenements</p>
+        <h2>Des rendez-vous pour prolonger l'experience hors ligne</h2>
+        <p>
+          La maquette initiale faisait deja une place aux salons et ateliers. Cette section conserve cette idee
+          pour donner plus de relief a l'univers Artify.
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <article class="event-card reveal">
+          <p class="card-kicker">12 avril - Paris</p>
+          <h3>Salon des Ateliers Independants</h3>
+          <p>Rencontres, demonstration de savoir-faire et vitrines de createurs emergents.</p>
+        </article>
+
+        <article class="event-card reveal">
+          <p class="card-kicker">19 avril - Lyon</p>
+          <h3>Week-end Ceramique Ouverte</h3>
+          <p>Parcours d'ateliers, tournage en direct et collection capsule imaginee pour l'evenement.</p>
+        </article>
+
+        <article class="event-card reveal">
+          <p class="card-kicker">27 avril - Bordeaux</p>
+          <h3>Rencontre Tissage et Matiere</h3>
+          <p>Focus sur les fibres, les teintures et les petites series textiles artisanales.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Les informations essentielles restent accessibles depuis l'accueil</h2>
+        <p>
+          La FAQ fait partie des fonctionnalites prioritaires du projet. Ici, elle sert deja de teaser utile
+          avant la future page dediee.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <article class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Comment fonctionne Artify ?
+          </button>
+          <div class="faq-answer">
+            <p>
+              La plateforme permet de decouvrir des creations artisanales, de reperer un artisan et de prendre contact.
+              Le paiement externe et la logistique ne font pas partie de cette premiere version.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Qui peut utiliser la plateforme ?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Trois profils sont vises: les visiteurs ou acheteurs, les artisans ou createurs, et les administrateurs
+              qui gerent les contenus du site.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Peut-on rechercher une creation precise ?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Oui. Cette homepage integre une recherche simple par mot-clef et categorie sur les creations mises en avant.
+            </p>
+          </div>
+        </article>
+
+        <article class="faq-item reveal">
+          <button class="faq-question" type="button" aria-expanded="false">
+            Quelles pages sont prevues ensuite ?
+          </button>
+          <div class="faq-answer">
+            <p>
+              Le document de specifications prevoit notamment l'inscription, la connexion, le profil, la FAQ complete,
+              les CGU, la page contact et un backoffice administrateur.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Une base prete pour brancher la future page de contact</h2>
+          <p>
+            Pour cette premiere version, la home termine sur une zone claire de prise de contact et rappelle le cadre
+            du projet APP.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="button button-primary" href="mailto:contact@artify.local">Ecrire a l'equipe</a>
+          <button class="button button-ghost" type="button" data-toast="Page CGU a venir">
+            Voir les CGU
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark">A</span>
+        <span class="brand-text">Artify</span>
+      </a>
+      <p class="footer-note">
+        Version 1 de la homepage APP Informatique. La mise en avant des creations et la prise de contact sont prioritaires.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#creations">Creations</a>
+      <a href="#artisans">Artisans</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
