@@ -1,0 +1,75 @@
+﻿/* ========== GALLERY PAGE ========== */
+  .gallery-page { padding: 60px 64px; }
+  .gallery-page h1 { font-family: 'Playfair Display', serif; font-size: 38px; margin-bottom: 12px; }
+  .gallery-lead { font-size: 15px; color: var(--muted); margin-bottom: 40px; }
+
+  .gallery-masonry {
+    columns: 4;
+    column-gap: 16px;
+  }
+  .gallery-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .gallery-item:hover { transform: scale(1.02); box-shadow: 0 12px 32px rgba(196,133,90,0.2); }
+  .gallery-thumb {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+  }
+  .g1 { height: 220px; background: linear-gradient(135deg, #F5EDE2, #C4855A); }
+  .g2 { height: 160px; background: linear-gradient(135deg, #E8F2EE, #2D6A5A); }
+  .g3 { height: 280px; background: linear-gradient(135deg, #F5F0E0, #B8963E); }
+  .g4 { height: 190px; background: linear-gradient(135deg, #F0E8DC, #8B5A3A); }
+  .g5 { height: 240px; background: linear-gradient(135deg, #EAE0D0, #A06030); }
+  .g6 { height: 170px; background: linear-gradient(135deg, #E8F2EE, #1A5045); }
+  .g7 { height: 200px; background: linear-gradient(135deg, #F5EDE2, #7A4020); }
+  .g8 { height: 260px; background: linear-gradient(135deg, #F5F0E0, #907820); }
+
+  /* ========== ACCENT STRIP ========== */
+  .accent-strip {
+    height: 3px;
+    background: var(--grad);
+  }
+
+  /* ========== CATEGORY CHIPS ========== */
+  .categories { display: flex; gap: 10px; flex-wrap: wrap; padding: 20px 64px; background: var(--surface); border-bottom: 1px solid var(--border); }
+  .cat-chip {
+    padding: 7px 18px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1.5px solid var(--border);
+    color: var(--mid);
+    background: var(--bg);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cat-chip:hover, .cat-chip.active { background: var(--violet-pale); border-color: var(--violet); color: var(--violet); }
+
+  /* ========== PASSWORD FORGOTTEN ========== */
+  .forgot-box { text-align: center; }
+  .forgot-icon { font-size: 48px; margin-bottom: 16px; }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .products-grid { grid-template-columns: repeat(2, 1fr); }
+    .artisans-grid { grid-template-columns: 1fr; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    nav { padding: 0 20px; }
+    .section { padding: 40px 20px; }
+    .search-bar { padding: 16px 20px; }
+    .categories { padding: 16px 20px; }
+    .gallery-masonry { columns: 2; }
+  }
+
+
