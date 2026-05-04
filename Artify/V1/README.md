@@ -1,1 +1,0 @@
-﻿# Artify V1`n`nStructure de la version 1 du projet Artify :`n`n- `index.html` : page principale avec tout le markup et systèmes de page.`n- `css/styles.css` : styles extraits du fichier original.`n- `js/main.js` : scripts d'interaction (navigation, onglets, FAQ, chips, sidebar).`n`nCette version est organisée en arborescence professionnelle pour le développement web.
